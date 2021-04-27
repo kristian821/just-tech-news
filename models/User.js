@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
-const sequalize = require('./config/connection');
+const sequelize = require('../config/connection');
 
 // create our User model
 class User extends Model {}
@@ -40,7 +40,7 @@ User.init(
             allowNull: false,
             validate: {
                 // this means the password must be at least 4 characters long
-                let: [4]
+                len: [4]
             }
         }
     },
