@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 
 class Post extends Model {
     static upvote(body, models) {
-        return models.Vote.cerate({
+        return models.Vote.create({
             user_id: body.user_id,
             post_id: body.post_id
         }).then(() => {
@@ -54,7 +54,7 @@ Post.init( {
 },
 {
     sequelize,
-    freexeTableName: true,
+    freezeTableName: true,
     underscored: true,
     modelName: 'post'
 }
